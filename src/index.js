@@ -29,6 +29,14 @@ class MainApp extends React.Component {
         });
         
     }
+
+    // ok sorry I was having to much fun with this and got carried away. I forgot one of the requirements is that a random dog image load
+    // when the page loads. I'm guessing to highlight the understanding of componentWillMount lifeCycle method. which im assuming is like 
+    // Angulars ngOnInit()? 
+    // Anyway if you want to have some fun comment out this componentWillMount and my dog Remmy will intro this app.
+    componentWillMount(){
+        this.nextDog();
+    }
     
 
     render() {
@@ -45,6 +53,8 @@ class MainApp extends React.Component {
             mainImg = this.state.dogImg;
             caption = this.state.randomCaption;
         }
+
+        
 
         return (
             <div className="mainApp">
