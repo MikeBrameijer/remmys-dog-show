@@ -51,7 +51,7 @@ import './index.css';
 //     }
 // }
 
-class Main extends React.Component {
+class MainApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -59,6 +59,7 @@ class Main extends React.Component {
         };
     }
 
+    // the following is a API call for fetching the dog img
     componentDidMount() {
         fetch('https://dog.ceo/api/breeds/image/random')
         .then(results => {
@@ -74,17 +75,27 @@ class Main extends React.Component {
         let randomDogImg = this.state.dogImg;
 
         return (
-            <div className="main">
-                <h1>Remmy's Dog Show</h1>
-                <img src={randomDogImg}></img>
+            <div className="mainApp">
+                <div class="main-header">
+                    <img class="logo" src="./remmyHeadshot.jpg"></img>
+                    <h1>Remmy's Dog Show</h1>
+                </div>
+                
+                <div class="main">
+                
+                    <img class="dog-display" src={randomDogImg}></img>
+                
+                    <button class="next-dog-btn">click for more dogs</button>
+                </div>
             </div>
+           
         );
     }
 }
 
 
 ReactDOM.render(
-    <Main />,
+    <MainApp />,
     document.getElementById('root')
 );
 
