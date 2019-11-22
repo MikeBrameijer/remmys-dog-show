@@ -51,6 +51,8 @@ import './index.css';
 //     }
 // }
 
+
+
 class MainApp extends React.Component {
     constructor(props) {
         super(props);
@@ -72,7 +74,15 @@ class MainApp extends React.Component {
     }
 
     render() {
-        let randomDogImg = this.state.dogImg;
+        let mainImg;
+        let introRemmy = "./remmy-relax.jpg";
+        let randomDogImg;
+        // let randomDogImg = this.state.dogImg;
+
+        //logic for setting the intro img of remmy
+        if(!randomDogImg){
+            mainImg = introRemmy;
+        }
 
         return (
             <div className="mainApp">
@@ -83,9 +93,11 @@ class MainApp extends React.Component {
                 
                 <div class="main">
                 
-                    <img class="dog-display" src={randomDogImg}></img>
-                
-                    <button class="next-dog-btn">click for more dogs</button>
+                    <img class="dog-display" src={mainImg}></img>
+                    {/* when the pages first loads a picture of Remmy with introduce the users to the dog tour */}
+                    <p>{!this.randomDogImg ? `Hi my name is Remmy! I love other dogs, if you click the button below I'll take you on a tour of some of my favorite Pals!` : 'Look at this Pup!'}</p>
+                    {/* the buttons text will change after the user gets started */}
+                    <button class="next-dog-btn">{!this.randomDogImg ? `Click to get started!` : `Click to see the next pup`}</button>
                 </div>
             </div>
            
@@ -99,3 +111,5 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
+
+// {this.randomDogImg ? <p>Look at this cute pup!</p> : <p> Hi my name is Remmy! I love other dogs, if you click the button below I'll take you on a tour of some of my favorite Pals!</p>}
