@@ -1,3 +1,11 @@
+## Hello! Welcome to Remmy's Dog Show!
+
+This is one of the first React apps I have ever created. 
+It is uses the [Dog API](https://dog.ceo/dog-api/) created by [Elliot Landsborough](https://github.com/ElliottLandsborough) to display random images of Dogs.
+
+I have made it Look like my Dog Remmy is showing you pictures or dogs he likes. Hopw you Enjoy it!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
