@@ -58,16 +58,16 @@ class MainApp extends React.Component {
 
         return (
             <div className="mainApp">
-                <div class="main-header">
-                    <img class="logo" src="./remmyHeadshot.jpg"></img>
+                <div className="main-header">
+                    <img className="logo" src="./remmyHeadshot.jpg"></img>
                     <h1>Remmy's Dog Show</h1>
                 </div>
                 
-                <div class="main">
+                <div className="main">
                 
-                    <img class="dog-display" src={mainImg}></img>
+                    <img className="dog-display" src={mainImg}></img>
                     <p>{caption}</p>
-                    <button class="next-dog-btn" onClick={() => this.nextDog()}>
+                    <button className="next-dog-btn" onClick={() => this.nextDog()}>
                         {/* this should really be moved to the condition statement above but i wanted to try out how to do and ngIf in React */}
                         {this.state.dogImg.length === 0 ? `Click to get started!` : `Click to see the next pup`}
                     </button>
