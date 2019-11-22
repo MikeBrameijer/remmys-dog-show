@@ -2,20 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// function NextDog(prop){
-//     return(
-//         <button className = "nextDog" onClick ={props.onClick}>
-//             testing
-//         </button> 
-
-//     );
-// }
-
 class MainApp extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            dogImg: String,
+            dogImg: []
         };
     }
 
@@ -30,18 +21,14 @@ class MainApp extends React.Component {
         });
         
     }
+    
 
     render() {
+        console.log(this.state.dogImg );
         let mainImg;
         let introRemmy = "./remmy-relax.jpg";
-        // let randomDogImg;
-        // let randomDogImg = this.state.dogImg;
 
-        //logic for setting the intro img of remmy
-        // if(!randomDogImg){
-        //     mainImg = introRemmy;
-        // }
-        if(!this.state.dogImg){
+        if(this.state.dogImg.length === 0){
             mainImg = introRemmy;
         }else{
             mainImg = this.state.dogImg;
@@ -58,10 +45,10 @@ class MainApp extends React.Component {
                 
                     <img class="dog-display" src={mainImg}></img>
                     {/* when the pages first loads a picture of Remmy with introduce the users to the dog tour */}
-                    <p>{this.state.dogImg ? `Hi my name is Remmy! I love other dogs, if you click the button below I'll take you on a tour of some of my favorite Pals!` : 'Look at this Pup!'}</p>
+                    <p>{this.state.dogImg.length === 0 ? `Hi my name is Remmy! I love other dogs, if you click the button below I'll take you on a tour of some of my favorite Pals!` : 'Look at this Pup!'}</p>
                     {/* the buttons text will change after the user gets started */}
                     <button class="next-dog-btn" onClick={() => this.nextDog()}>
-                        {this.state.dogImg ? `Click to get started!` : `Click to see the next pup`}
+                        {this.state.dogImg.length === 0 ? `Click to get started!` : `Click to see the next pup`}
                     </button>
                 </div>
             </div>
